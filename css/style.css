@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
+html {
+  font-size: 10px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 300px;
+  background: #d19b51;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #d19b51, #e5c08e);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #d19b51, #e5c08e);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #d19b51, #e5c08e);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #d19b51, #e5c08e);
+  /* Standard syntax */
+}
+
+#color-grid {
+  z-index: 0;
+  height: 45rem;
+  width: 45rem;
+  margin: auto;
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+}
+#color-grid div {
+  border: solid #1e1e1e;
+  box-shadow: 5px 5px 20px #1e1e1e;
+}
+#color-grid #green {
+  border-top-left-radius: 100%;
+  border-width: 2.2rem 1.1rem 1.1rem 2.2rem;
+  background: #309b22;
+}
+#color-grid #red {
+  border-top-right-radius: 100%;
+  border-width: 2.2rem 2.2rem 1.1rem 1.1rem;
+  background: #ad1111;
+}
+#color-grid #blue {
+  border-bottom-right-radius: 100%;
+  border-width: 1.1rem 2.2rem 2.2rem 1.1rem;
+  background: #074493;
+}
+#color-grid #yellow {
+  border-bottom-left-radius: 100%;
+  border-width: 1.1rem 1.1rem 2.2rem 2.2rem;
+  background: #d8c72b;
+}
+
+#center {
+  height: 24rem;
+  width: 24rem;
+  margin: auto;
+  z-index: 1000;
+  position: absolute;
+  border: 2rem solid #1e1e1e;
+  border-radius: 100%;
+  background: #323232;
+  color: white;
+}
+#center #title {
+  text-align: center;
+  font-size: 3.5rem;
+  margin: 2rem 0px 1.5rem 0px;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 16rem;
+}
+#controls #start, #controls #strict {
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  border-radius: 100%;
+  margin-bottom: 0px;
+  border: gray solid 0.3rem;
+  box-shadow: 5px 5px 12px 0px black;
+}
+#controls #start:hover, #controls #strict:hover {
+  cursor: pointer;
+}
+#controls #start:active, #controls #strict:active {
+  box-shadow: none;
+  margin-top: 0.4rem;
+}
+#controls #count {
+  height: 3.6rem;
+  width: 5.5rem;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  border: gray solid 0.3rem;
+  border-radius: 8%;
+  background: #330808;
+  color: #fc2525;
+  padding-top: 0.3rem;
+}
+
+#controlsLabels {
+  width: 18rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#controlsLabels p {
+  padding: 0px;
+  width: 5rem;
+  display: inline-block;
+  margin: 0.5rem 0px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+#onOff {
+  width: 10rem;
+  margin: 1.3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#onOff div, #onOff p {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0px;
+}
+#onOff #switch {
+  width: 4rem;
+  height: 2rem;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  padding: 0px 0.2rem;
+  border-radius: 10%;
+}
+#onOff #switch div {
+  height: 1.6rem;
+  width: 1.6rem;
+  border: #001054 solid 0.2rem;
+  border-radius: 15%;
+  background-color: #001054;
+}
+#onOff #switch:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  html {
+    font-size: 6px;
+  }
+}

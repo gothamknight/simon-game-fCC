@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+html{
+  font-size: 10px;
+  font-family: 'Share Tech Mono', monospace;
+}
+*{
+  box-sizing: border-box;
+  //border: dotted 1px red;
+}
+
+// VARIABLES //
+$grey: rgb(30, 30, 30);
+$green:rgb(48, 155, 34);
+$red:rgb(173, 17, 17);
+$yellow:rgb(216, 199, 43);
+$blue:rgb(7, 68, 147); 
+
+
+// MIXIN //
+@mixin border-width-bg($width, $bg){
+  border-width: $width;
+  background: $bg;
+}
+@mixin flex($align-items, $justify-cont){
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-cont;
+}
+
+body {
+  margin: 0px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 300px;
+  background: rgb(209, 155, 81); /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,rgb(209, 155, 81),rgb(229, 192, 142)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, rgb(209, 155, 81),rgb(229, 192, 142)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, rgb(209, 155, 81),rgb(229, 192, 142)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, rgb(209, 155, 81),rgb(229, 192, 142)); /* Standard syntax */
+  
+}
+#color-grid {
+  z-index: 0;
+  height: 45rem;
+  width:45rem;
+  margin: auto;
+  display: grid;
+  grid-template: repeat(2,1fr)/repeat(2,1fr);
+  & div {
+    border: solid $grey;
+    box-shadow: 5px 5px 20px $grey;
+  }
+  & #green {
+    border-top-left-radius: 100%;
+    @include border-width-bg(2.2rem 1.1rem 1.1rem 2.2rem,$green);
+  }//green
+  & #red {
+    border-top-right-radius: 100%;
+    @include border-width-bg(2.2rem 2.2rem 1.1rem 1.1rem,$red);
+  }//red
+  & #blue {
+    border-bottom-right-radius: 100%;
+    @include border-width-bg(1.1rem 2.2rem 2.2rem 1.1rem,$blue);
+  }//blue
+  & #yellow{
+    border-bottom-left-radius: 100%;
+    @include border-width-bg(1.1rem 1.1rem 2.2rem 2.2rem, $yellow);
+  }//yellow
+}
+#center {
+  height: 24rem;
+  width:24rem;
+  margin: auto;
+  z-index: 1000;
+  position:absolute;
+  border: 2rem solid $grey;
+  border-radius:100%;
+  background: rgb(50,50,50);
+  color: white;
+  & #title {
+    text-align:center;
+    font-size: 3.5rem;
+    margin: 2rem 0px 1.5rem 0px;
+  }
+}
+#controls {
+  @include flex(center,space-between);
+  margin: auto;
+  width: 16rem;
+  & #start, & #strict {
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    border-radius: 100%;
+    margin-bottom: 0px;
+    border: gray solid 0.3rem;
+    box-shadow: 5px 5px 12px 0px black; 
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      box-shadow:none;
+      margin-top: 0.4rem;
+    }
+  }
+  & #count {
+    height: 3.6rem;
+    width: 5.5rem;
+    margin:0px;
+    @include flex(center, center);
+    font-size: 2.4rem;
+    border: gray solid 0.3rem;
+    border-radius: 8%;
+    background: rgb(51, 8, 8);
+    color:rgb(252, 37, 37);
+    padding-top:0.3rem;
+  }
+}
+#controlsLabels {
+  width: 18rem;
+  margin:auto;
+  @include flex(center,space-between);
+  & p {
+    padding:0px;
+    width: 5rem;
+    display:inline-block;
+    margin:0.5rem 0px;
+    font-size: 1.4rem;
+    text-align:center;
+  }
+}
+#onOff {
+  width: 10rem;
+  margin:1.3rem auto;
+  @include flex(center, space-between);
+  & div, & p {
+    display:inline-block;
+    font-size: 1.4rem;
+    margin:0px;
+  }
+  & #switch {
+    width: 4rem;
+    height: 2rem;
+    background-color: gray;
+    @include flex(center,none);
+    padding: 0px 0.2rem;
+    border-radius:10%;
+    & div {
+      height:1.6rem;
+      width:1.6rem;
+      border: rgb(0, 16, 84) solid 0.2rem;
+      border-radius:15%;
+      background-color:rgb(0, 16, 84); 
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+//MEDIA QUERIES//
+@media only screen and (max-width: 480px){
+  html {
+    font-size: 8px;
+  }
+}
+@media only screen and (max-width:390px){
+  html{
+    font-size: 6px;
+  }
+}
