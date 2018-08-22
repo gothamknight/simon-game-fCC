@@ -1,3 +1,3 @@
 # simon-game-fCC
 
-link: https://user-ap.github.io/simon-game-fCC/
+https://iso1048.github.io/simon-game-fCC/
